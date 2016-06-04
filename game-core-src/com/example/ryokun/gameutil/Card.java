@@ -1,5 +1,7 @@
 package com.example.ryokun.gameutil;
 
+import java.util.*;
+
 public class Card {
   public static final int SPADE = 0;
   public static final int HART = 1;
@@ -116,4 +118,12 @@ public class Card {
     }
     return "card@undefined" + value;
   }
+
+
+  public static Comparator<Card> COMPARATOR_ASCENT = new Comparator<Card>(){
+    @Override
+    public int compare(Card c1, Card c2){
+      return Integer.compare(c1.cardValue, c2.cardValue);
+    }
+  };
 }
