@@ -116,7 +116,7 @@ public class CardSet {
     return "CardSet@(count=" + count + ",top=" + top + ")";
   }
 
-  public static void getFullCardSet(){
+  public static CardSet getFullCardSet(){
     CardSet set = new CardSet();
     for(int s=0; s<4; s++){
       for(int n=1; n<=13; n++){
@@ -125,5 +125,6 @@ public class CardSet {
     }
     set.add(new Card(Card.JOKER, 0, false));
     set.add(new Card(Card.JOKER, 0, false));
+    return set;
   }
 }
