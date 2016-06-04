@@ -116,7 +116,7 @@ public class CardSet {
     return "CardSet@(count=" + count + ",top=" + top + ")";
   }
 
-  public void printCards(String caption){
+  public void printCards(){
     System.out.println("--CARDSET(" + getCount() + ")");
     for(int i=0; i<getCount(); i++){
       System.out.format("%2d: %s\n", i, get(i));
@@ -131,7 +131,7 @@ public class CardSet {
       }
     }
     set.add(new Card(Card.JOKER, 0, false));
-    set.add(new Card(Card.JOKER, 0, false));
+    set.add(new Card(Card.JOKER2, 0, false));
     return set;
   }
 }

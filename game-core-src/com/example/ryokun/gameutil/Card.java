@@ -36,7 +36,7 @@ public class Card {
       case HART:
       case DIAMOND:
       case CLUB:
-        if( (suit>0&&suit<=3) && (number>0&&number<=13) ){
+        if( (suit>=0&&suit<=3) && (number>0&&number<=13) ){
           cardValue = (suit*13) + (number-1);
         }
         break;
@@ -104,15 +104,16 @@ public class Card {
 
   public String toString(){
     String[] suitstrs = {"spade", "hart", "diamond", "club"};
+    String value = "(" + cardValue + ")";
     if( isJoker() ){
       if( cardValue == JOKER_VALUE ){
-        return "card@[JOKER]";
+        return "card@[JOKER]" + value;
       }else if( cardValue == JOKER2_VALUE ){
-        return "card@[JOKER2]";
+        return "card@[JOKER2]" + value;
       }
     }else if( isNumberCard() ){
-      return "card@[" + suitstrs[getCardSuit()] + "-" + getCardNumber() + "]";
+      return "card@[" + suitstrs[getCardSuit()] + "-" + getCardNumber() + "]" + value;
     }
-    return "card@undefined";
+    return "card@undefined" + value;
   }
 }
