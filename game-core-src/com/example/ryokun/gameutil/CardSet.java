@@ -116,6 +116,13 @@ public class CardSet {
     return "CardSet@(count=" + count + ",top=" + top + ")";
   }
 
+  public void printCards(String caption){
+    System.out.println("--CARDSET(" + getCount() + ")");
+    for(int i=0; i<getCount(); i++){
+      System.out.format("%2d: %s\n", i, get(i));
+    }
+  }
+
   public static CardSet getFullCardSet(){
     CardSet set = new CardSet();
     for(int s=0; s<4; s++){
